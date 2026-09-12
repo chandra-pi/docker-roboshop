@@ -24,7 +24,7 @@ COPY --chown=roboshop:roboshop *.py .
 CMD ["uwsgi", "--ini", "payment.ini"]
 
 
-
+# CMD ["sleep", "1000"]
 
 
 # FROM python:3.9
