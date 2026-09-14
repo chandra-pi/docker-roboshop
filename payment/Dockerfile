@@ -34,6 +34,9 @@ CMD ["uwsgi", "--ini", "payment.ini"]
 # EXPOSE 8080
 # RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 # WORKDIR /opt/server
+# COPY requirements.txt .
+# COPY *.py .
+# COPY payment.ini .
 # RUN apk add --no-cache python3-dev build-base linux-headers pcre-dev
 # RUN pip3 install --no-cache-dir -r requirements.txt
 # CMD ["uwsgi", "--ini", "payment.ini"]
