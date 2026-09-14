@@ -24,7 +24,26 @@ COPY --chown=roboshop:roboshop *.py .
 CMD ["uwsgi", "--ini", "payment.ini"]
 
 
+
+
+
+
+####### This code was worked without the builder, we can use this code if above code not worked
+### Payment module works with root user, the above code is running with root user, this code without root
+# FROM python:3.9.23-alpine3.22
+# EXPOSE 8080
+# RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
+# WORKDIR /opt/server
+# RUN apk add --no-cache python3-dev build-base linux-headers pcre-dev
+# RUN pip3 install --no-cache-dir -r requirements.txt
+# CMD ["uwsgi", "--ini", "payment.ini"]
+
+
+
+
+
 # CMD ["sleep", "1000"]
+
 
 
 # FROM python:3.9
